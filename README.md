@@ -1,4 +1,8 @@
-# HESS black-box algorithm from http://www.peqnp.com
+# HESS black-box algorithm 
 
-## Instalation
-  pip install HESS
+http://www.peqnp.com
+
+# Installation
+```python
+pip install PEQNP
+```

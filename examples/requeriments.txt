@@ -1,0 +1,7 @@
+hess
+numpy
+pandas
+matplotlib
+sklearn
+gym
+'gym[atari]'

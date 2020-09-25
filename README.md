@@ -4,5 +4,5 @@ http://www.peqnp.com
 
 # Installation
 ```python
-pip install PEQNP
+pip install HESS
 ```

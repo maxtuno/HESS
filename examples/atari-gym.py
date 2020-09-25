@@ -34,7 +34,7 @@ def run_episode(seq):
     for action in par[seq]:
         if render:
             env.render()
-        observation, reward, done, info = env.step(int(observation.flatten().sum() % action))
+        observation, reward, done, info = env.step(int(observation.flatten().sum() ** 3 % action))
         total_reward += reward
         if total_reward > best:
             best = total_reward

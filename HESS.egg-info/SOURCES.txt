@@ -1,3 +1,4 @@
+README.md
 setup.cfg
 setup.py
 HESS.egg-info/PKG-INFO
@@ -6,5 +7,3 @@ HESS.egg-info/dependency_links.txt
 HESS.egg-info/top_level.txt
 hess/__init__.py
 hess/hess.py
-include/libhess.h
-src/libhess.c

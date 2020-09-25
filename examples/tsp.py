@@ -22,9 +22,16 @@ import numpy as np
 
 import hess
 
+glb = np.inf
+
 
 def oracle(seq):
-    return sum(np.linalg.norm(data[seq[i - 1]] - data[seq[i]]) for i in range(n))
+    global glb
+    loc = sum(np.linalg.norm(data[seq[i - 1]] - data[seq[i]]) for i in range(n))
+    if loc < glb:
+        glb = loc
+        print(glb)
+    return loc
 
 
 if __name__ == '__main__':

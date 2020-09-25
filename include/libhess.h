@@ -9,6 +9,7 @@
 
 #include <Python.h>
 #include <stdio.h>
+#include <float.h>
 
 #ifndef HESS_HESS_H
 #define HESS_HESS_H
@@ -42,7 +43,7 @@ void step(int i, int j, PyObject *pList) {
 
 PyObject *sequence(PyObject *self, PyObject *args) {
     int n, done;
-    double local, global, cursor = MAXFLOAT;
+    double local, global, cursor = FLT_MAX;
     size_t i, j, k;
     PyObject *pOracle;
     PyObject *pList;
@@ -63,7 +64,7 @@ PyObject *sequence(PyObject *self, PyObject *args) {
 
     for (;;) {
         done = 1;
-        global = MAXFLOAT;
+        global = FLT_MAX;
         for (i = 0; i < n; i++) {
             for (j = 0; j < n; j++) {
                 oo:
@@ -103,7 +104,7 @@ PyObject *sequence(PyObject *self, PyObject *args) {
 
 PyObject *binary(PyObject *self, PyObject *args) {
     int n, done;
-    double local, global, cursor = MAXFLOAT;
+    double local, global, cursor = FLT_MAX;
     size_t i, j, k;
     PyObject *pOracle;
     PyObject *pList;
@@ -124,7 +125,7 @@ PyObject *binary(PyObject *self, PyObject *args) {
 
     for (;;) {
         done = 1;
-        global = MAXFLOAT;
+        global = FLT_MAX;
         for (i = 0; i < n; i++) {
             for (j = 0; j < n; j++) {
                 oo:

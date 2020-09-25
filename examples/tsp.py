@@ -28,7 +28,7 @@ def oracle(seq):
 
 
 if __name__ == '__main__':
-    n = 30
+    n = 100
 
     data = np.random.logistic(size=(n, 2))
 

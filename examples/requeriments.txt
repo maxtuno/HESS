@@ -4,4 +4,4 @@ pandas
 matplotlib
 sklearn
 gym
-'gym[atari]'
+gym[atari]

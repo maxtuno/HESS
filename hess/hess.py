@@ -5,13 +5,14 @@
 # //   without any restriction, Oscar Riveros reserved rights, patents and     //
 # //  commercialization of this knowledge or derived directly from this work.  //
 # ///////////////////////////////////////////////////////////////////////////////
-def sequence(n, oracle, fast=True, cycles=1):
+def sequence(n, oracle, fast=True, cycles=1, target=0):
     """
     HESS Algorithm is a Universal Black Box Optimizer (sequence version).
     :param n: The size of sequence.
     :param oracle: The oracle, this output a number and input a sequence.
     :param fast: More fast less accuracy.
     :param cycles: How many times the HESS algorithm is executed.
+    :param target: Any value less than this terminates the execution.
     :return optimized sequence.
     """
     xs = list(range(n))
@@ -26,7 +27,7 @@ def sequence(n, oracle, fast=True, cycles=1):
             j -= 1
 
     top = glb
-    for i in range(cycles):
+    for _ in range(cycles):
         glb = top + 1
         if fast:
             while True:
@@ -40,7 +41,7 @@ def sequence(n, oracle, fast=True, cycles=1):
                             if glb < top:
                                 top = glb
                                 opt = xs[:]
-                                if top == 0:
+                                if top <= target:
                                     return opt
                         elif loc > glb:
                             __inv(i, j, xs)
@@ -58,7 +59,7 @@ def sequence(n, oracle, fast=True, cycles=1):
                             if glb < top:
                                 top = glb
                                 opt = xs[:]
-                                if top == 0:
+                                if top <= target:
                                     return opt
                         elif loc > glb:
                             __inv(i, j, xs)
@@ -75,13 +76,14 @@ def sequence(n, oracle, fast=True, cycles=1):
 # //   without any restriction, Oscar Riveros reserved rights, patents and     //
 # //  commercialization of this knowledge or derived directly from this work.  //
 # ///////////////////////////////////////////////////////////////////////////////
-def binary(n, oracle, fast=True, cycles=1):
+def binary(n, oracle, fast=True, cycles=1, target=0):
     """
     HESS Algorithm is a Universal Black Box Optimizer (binary version).
     :param n: The size of bit vector.
     :param oracle: The oracle, this output a number and input a bit vector.
     :param fast: More fast some times less accuracy.
     :param cycles: How many times the HESS algorithm is executed.
+    :param target: Any value less than this terminates the execution.
     :return optimized sequence.
     """
     xs = [False] * n
@@ -97,7 +99,7 @@ def binary(n, oracle, fast=True, cycles=1):
             xs[j] = aux
 
     top = glb
-    for i in range(cycles):
+    for _ in range(cycles):
         glb = top + 1
         if fast:
             while True:
@@ -111,7 +113,7 @@ def binary(n, oracle, fast=True, cycles=1):
                             if glb < top:
                                 top = glb
                                 opt = xs[:]
-                                if top == 0:
+                                if top <= target:
                                     return opt
                         elif loc > glb:
                             __inv(i, j, xs)
@@ -129,7 +131,7 @@ def binary(n, oracle, fast=True, cycles=1):
                             if glb < top:
                                 top = glb
                                 opt = xs[:]
-                                if top == 0:
+                                if top <= target:
                                     return opt
                         elif loc > glb:
                             __inv(i, j, xs)

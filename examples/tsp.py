@@ -39,7 +39,7 @@ if __name__ == '__main__':
 
     data = np.random.logistic(size=(n, 2))
 
-    opt = hess.sequence(n, oracle)
+    opt = hess.sequence(n, oracle, fast=False)
 
     x, y = zip(*data[opt + [opt[0]]])
 

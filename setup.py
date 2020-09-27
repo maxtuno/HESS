@@ -3,7 +3,7 @@ import setuptools
 from distutils.core import setup, Extension
 setup(
     name='HESS',
-    version='0.0.3',
+    version='0.0.4',
     packages=['hess'],
     url='http://www.peqnp.com',
     license='Copyright (c) 2012-2020 Oscar Riveros. All rights reserved.',

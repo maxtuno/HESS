@@ -51,7 +51,7 @@ if __name__ == '__main__':
     glb = np.inf
     while True:
         par = np.random.sample(size=n)
-        seq = hess.sequence(n, oracle=run_episode)
+        seq = hess.sequence(n, oracle=run_episode, fast=False)
         loc = run_episode(seq)
         if loc < glb:
             glb = loc

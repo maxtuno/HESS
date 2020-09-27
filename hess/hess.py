@@ -35,13 +35,13 @@ def sequence(n, oracle, fast=True, cycles=1):
                     for j in range(i + 1, len(xs)):
                         __inv(i, j, xs)
                         loc = oracle(xs)
-                        if loc == top:
-                            glb *= 2
                         if loc < glb:
                             glb = loc
                             if glb < top:
                                 top = glb
                                 opt = xs[:]
+                                if top == 0:
+                                    return opt
                         elif loc > glb:
                             __inv(i, j, xs)
                 if anchor == glb:
@@ -53,13 +53,13 @@ def sequence(n, oracle, fast=True, cycles=1):
                     for j in range(len(xs)):
                         __inv(i, j, xs)
                         loc = oracle(xs)
-                        if loc == top:
-                            glb *= 2
                         if loc < glb:
                             glb = loc
                             if glb < top:
                                 top = glb
                                 opt = xs[:]
+                                if top == 0:
+                                    return opt
                         elif loc > glb:
                             __inv(i, j, xs)
                 if anchor == glb:
@@ -106,13 +106,13 @@ def binary(n, oracle, fast=True, cycles=1):
                     for j in range(i + 1, len(xs)):
                         __inv(i, j, xs)
                         loc = oracle(xs)
-                        if loc == top:
-                            glb *= 2
                         if loc < glb:
                             glb = loc
                             if glb < top:
                                 top = glb
                                 opt = xs[:]
+                                if top == 0:
+                                    return opt
                         elif loc > glb:
                             __inv(i, j, xs)
                 if anchor == glb:
@@ -124,13 +124,13 @@ def binary(n, oracle, fast=True, cycles=1):
                     for j in range(len(xs)):
                         __inv(i, j, xs)
                         loc = oracle(xs)
-                        if loc == top:
-                            glb *= 2
                         if loc < glb:
                             glb = loc
                             if glb < top:
                                 top = glb
                                 opt = xs[:]
+                                if top == 0:
+                                    return opt
                         elif loc > glb:
                             __inv(i, j, xs)
                 if anchor == glb:

@@ -21,6 +21,7 @@ import sys
 
 import hess
 
+
 def oracle(seq):
     global top
     count = 0
@@ -46,4 +47,4 @@ if __name__ == '__main__':
                 cnf.append(list(map(int, line.rstrip('\n')[:-2].split(' '))))
 
     top = m
-    print(hess.binary(n, oracle))
+    print(hess.binary(n, oracle, fast=False))

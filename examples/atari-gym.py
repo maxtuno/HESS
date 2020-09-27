@@ -53,4 +53,4 @@ if __name__ == '__main__':
     env = gym.make('Solaris-ram-v0')
     n = len(env.unwrapped.get_action_meanings())
     par = np.random.randint(1, n + 1, size=n * m)
-    seq = hess.sequence(n * m, oracle=run_episode)
+    seq = hess.sequence(n * m, oracle=run_episode, fast=False)

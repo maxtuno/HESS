@@ -17,6 +17,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+# https://twitter.com/maxtuno/status/1310322422562910208
+
 import gym
 import hess
 import numpy as np

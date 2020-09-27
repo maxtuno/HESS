@@ -55,7 +55,7 @@ if __name__ == '__main__':
     n, m = 100, len(X[0])
     W = np.random.sample(size=n)
     ini = time.time()
-    seq = hess.sequence(n, oracle=oracle)
+    seq = hess.sequence(n, oracle=oracle, fast=False)
     end = time.time()
     w = W[seq][:m]
 

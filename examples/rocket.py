@@ -20,6 +20,8 @@ SOFTWARE.
 # Rocket Lander
 # https://github.com/sdsubhajitdas/Rocket_Lander_Gym
 
+# video https://twitter.com/maxtuno/status/1312278639485087745
+
 import numpy
 import gym
 import rocket_lander_gym

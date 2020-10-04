@@ -1,1 +1,1 @@
-from . hess import sequence, binary
+from . hess import sequence, binary, abstract

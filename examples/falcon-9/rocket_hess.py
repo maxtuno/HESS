@@ -70,7 +70,7 @@ def log(top, opt):
 
 def apply(seed):
     numpy.random.seed(seed)
-    xs = numpy.random.standard_cauchy(size=m * m)
+    xs = numpy.random.standard_cauchy(size=m * n)
     hess.abstract(xs, oracle, f, g, log)
 
 
